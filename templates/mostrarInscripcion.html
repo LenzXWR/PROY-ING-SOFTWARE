@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripciones en Actividades de Turismo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Inscripciones en Actividades de Turismo</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID Inscripción</th>
+                    <th>ID Turista</th>
+                    <th>Nombre del Turista</th>
+                    <th>ID Actividad</th>
+                    <th>Nombre de la Actividad</th>
+                    <th>Fecha de la Actividad</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for inscripcion in inscripciones %}
+                <tr>
+                    <td>{{ inscripcion[0] }}</td>
+                    <td>{{ inscripcion[1] }}</td>
+                    <td>{{ inscripcion[2] }}</td>
+                    <td>{{ inscripcion[3] }}</td>
+                    <td>{{ inscripcion[4] }}</td>
+                    <td>{{ inscripcion[5] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

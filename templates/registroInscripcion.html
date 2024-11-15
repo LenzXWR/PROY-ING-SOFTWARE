@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción en Actividad de Turismo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Inscribirse en Actividad de Turismo</h2>
+        <form action="/inscripcion/registrar" method="POST">
+            <div class="form-group">
+                <label for="id_turista">ID del Turista</label>
+                <input type="number" class="form-control" id="id_turista" name="id_turista" required>
+            </div>
+            <div class="form-group">
+                <label for="id_actividad">ID de la Actividad</label>
+                <input type="number" class="form-control" id="id_actividad" name="id_actividad" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Inscribirse</button>
+        </form>
+    </div>
+</body>
+</html>

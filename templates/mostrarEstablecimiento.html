@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Establecimientos Registrados</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Establecimientos Registrados</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Ubicación</th>
+                    <th>Descripción</th>
+                    <th>ID Responsable</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for establecimiento in establecimientos %}
+                <tr>
+                    <td>{{ establecimiento[0] }}</td>
+                    <td>{{ establecimiento[1] }}</td>
+                    <td>{{ establecimiento[2] }}</td>
+                    <td>{{ establecimiento[3] }}</td>
+                    <td>{{ establecimiento[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
