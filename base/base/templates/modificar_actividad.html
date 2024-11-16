@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar Actividad</title>
+</head>
+<body>
+    <h1>Modificar Actividad</h1>
+    <form action="{{ url_for('modificar_actividad', id=actividad.id) }}" method="post">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="{{ actividad.nombre }}" required><br>
+        <label>Descripción:</label>
+        <textarea name="descripcion">{{ actividad.descripcion }}</textarea><br>
+        <label>Fecha:</label>
+        <input type="date" name="fecha" value="{{ actividad.fecha }}"><br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>

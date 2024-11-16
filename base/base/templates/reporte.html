@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Actividades</title>
+</head>
+<body>
+    <h1>Reporte de Actividades del Establecimiento</h1>
+    <p><strong>Nombre del Responsable:</strong> {{ responsable.nombre }}</p>
+    <p><strong>Email:</strong> {{ responsable.email }}</p>
+
+    <h2>Actividades Registradas</h2>
+    <ul>
+        {% for actividad in actividades %}
+            <li>
+                <strong>Nombre:</strong> {{ actividad.nombre }} <br>
+                <strong>Descripción:</strong> {{ actividad.descripcion }} <br>
+                <strong>Fecha:</strong> {{ actividad.fecha }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

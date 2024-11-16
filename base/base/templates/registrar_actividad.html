@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Actividad</title>
+</head>
+<body>
+    <h1>Registrar Nueva Actividad</h1>
+    <form action="{{ url_for('registrar_actividad') }}" method="post">
+        <input type="hidden" name="responsable_id" value="{{ responsable.id }}">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required><br>
+        <label>Descripción:</label>
+        <textarea name="descripcion"></textarea><br>
+        <label>Fecha:</label>
+        <input type="date" name="fecha"><br>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

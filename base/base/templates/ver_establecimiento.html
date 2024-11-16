@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Establecimiento</title>
+</head>
+<body>
+    <h1>Detalles del Establecimiento</h1>
+    <p><strong>Nombre:</strong> {{ responsable.nombre }}</p>
+    <p><strong>Email:</strong> {{ responsable.email }}</p>
+
+    <h2>Actividades Turísticas</h2>
+    <ul>
+        {% for actividad in responsable.actividades %}
+            <li>
+                <strong>Nombre:</strong> {{ actividad.nombre }} <br>
+                <strong>Descripción:</strong> {{ actividad.descripcion }} <br>
+                <strong>Fecha:</strong> {{ actividad.fecha }} <br>
+                <form action="{{ url_for('eliminar_actividad', id=actividad.id) }}" method="post" style="display: inline;">
+                    <button type="submit">Eliminar</button>
+                </form>
+                <a href="{{ url_for('modificar_actividad', id=actividad.id) }}">Modificar</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Registrar Nueva Actividad</h3>
+    <form action="{{ url_for('registrar_actividad') }}" method="post">
+        <input type="hidden" name="responsable_id" value="{{ responsable.id }}">
+        <label>Nombre de la Actividad:</label>
+        <input type="text" name="nombre" required><br>
+        <label>Descripción:</label>
+        <textarea name="descripcion"></textarea><br>
+        <label>Fecha:</label>
+        <input type="date" name="fecha"><br>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>
